@@ -1,0 +1,17 @@
+{
+    "name": "sergio/php_ksergiocom",
+    "description": "Web simple hecha con Vanilla PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ksergio",
+            "email": "113699828+ksergiocom@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
