@@ -27,11 +27,15 @@ class Router {
 
     // Metodo para ejecutar el controlador asociado a la ruta
     protected function callHandler($handler) {
-
-        if (is_array($handler) && is_callable($handler)) {
-            call_user_func($handler);
-        } else {
-            echo "Método no encontrado";
+        if (is_array($handler) && count($handler) === 2) {
+            [$controller, $method] = $handler;
+    
+            if (class_exists($controller) && method_exists($controller, $method)) {
+                $controllerInstance = new $controller();
+                $controllerInstance->$method();
+            } else {
+                echo "Controlador o método no encontrado";
+            }
         }
     }
 }

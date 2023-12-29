@@ -13,5 +13,7 @@
             "email": "113699828+ksergiocom@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "^3.0"
+    }
 }
