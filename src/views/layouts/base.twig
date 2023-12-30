@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
+    {{ include('layouts/navbar.twig') }}
     <main>
-        <h1>ksergio<span>.com</span></h1>
-        <h3>I love coding</h3>
+        {% block main %}
+            <p>Default base content</p>
+        {% endblock main %}
     </main>
 </body>
 </html>

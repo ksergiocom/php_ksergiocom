@@ -7,5 +7,3 @@ $twig = new \Twig\Environment($loader, [
     'cache' => __DIR__ . '/views/cache',
     'debug' => true, // Cambiar en producción
 ]);
-
-return $twig;
