@@ -1,0 +1,5 @@
+vendor
+access.log
+errors.log
+src/views/cache
+

@@ -1,0 +1,13 @@
+{% extends "layouts/base.twig" %}
+
+{% block main %}
+    <a href="/">&larr; Volver</a>
+    <article>
+        <div>
+            <h1>{{post.titulo}}</h1>
+            <p><span>Fecha: {{post.fecha}}</span></p>
+        </div>
+        {{markdown|raw}}
+    </article>
+{% endblock %}
+        

@@ -1,9 +1,12 @@
 <?php
 
 include __DIR__ . '/../../vendor/autoload.php';
-include __DIR__ . '/../routes.php';
 
-use App\Core\Router;
+require __DIR__ . '/../config/exceptions.php';
 
-$router = new Router();
-$router->dispatch();
+use App\Core\MongoClient;
+MongoClient::initialize();
+
+
+require __DIR__ . '/../config/twig.php';
+require __DIR__ . '/../config/router.php';

@@ -14,6 +14,9 @@
         }
     ],
     "require": {
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "mongodb/mongodb": "^1.17",
+        "erusev/parsedown": "^1.7",
+        "nikic/fast-route": "^1.3"
     }
 }

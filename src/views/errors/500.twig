@@ -1,0 +1,12 @@
+{% extends "layouts/base.twig" %}
+
+{% block main %}
+    <h1>500</h1>
+    {% if message %}
+    <p>msg: {{message}}<p>
+    {% else %}
+    <h3>Ups! Algo ha ocurrido con la página.</h3>
+    {% endif %}    
+    <a href="/">Volver al inicio</a>
+{% endblock %}
+        

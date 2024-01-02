@@ -1,6 +1,17 @@
 {% extends "layouts/base.twig" %}
 
 {% block main %}
-    <h1>ksergio<span>.com</span></h1>
-    <h3>I love coding</h3>
+    <section class="hero">
+        <h1>ksergio<span>.com</span></h1>
+        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut.</h3>
+    </section>
+    <section>
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <a href="/post/{{post._id}}">{{post.titulo}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}
