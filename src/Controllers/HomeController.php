@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\BaseController;
 use App\Core\MongoClient;
+use App\Models\Post;
 
 use MongoDB\BSON\ObjectId;
 use Exception;
@@ -17,21 +18,8 @@ class HomeController extends BaseController {
     }
 
     public function post($_id){
-  
-        // Asegúrate de que $_id sea un ObjectId válido
-        try {
-            $mongoId = new ObjectId($_id);
-        } catch (Exception $e) {
-            echo "404 Not Found"; // ID no válido
-            return;
-        }
-    
-        $post = MongoClient::getCollection('posts')->findOne(["_id" => $mongoId]);
-        
-        if (!$post) {
-            echo "404 Not Found"; // Post no encontrado
-            return;
-        }
+        $post = Post::findById($_id);
+        if(!$post) throw new \Exception("No existe este post");
     
         $Parsedown = new Parsedown();
         $markdown = $Parsedown->text($post['contenido']);
