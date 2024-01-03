@@ -6,12 +6,9 @@ use App\Core\BaseController;
 use App\Core\MongoClient;
 use App\Models\Post;
 
-use MongoDB\BSON\ObjectId;
-use Exception;
-use Parsedown;
-
 class HomeController extends BaseController { 
     public function index(){
+
         $posts = MongoClient::getCollection('posts')->find()->toArray();
 
         $this->render('home.twig',['posts'=>$posts]);
@@ -21,14 +18,14 @@ class HomeController extends BaseController {
         $post = Post::findById($_id);
         if(!$post) throw new \Exception("No existe este post");
     
-        $Parsedown = new Parsedown();
+        $Parsedown = new \Parsedown();
         $markdown = $Parsedown->text($post['contenido']);
     
         $this->render('post.twig', ['markdown' => $markdown, 'post'=>$post]);
     }
 
     public function about(){
-        throw new Exception('Esto es un error custom lanzado');
+        throw new \Exception('Esto es un error custom lanzado');
         $this->render('about.twig');
     }
 }

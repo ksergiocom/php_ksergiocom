@@ -33,6 +33,13 @@ class BaseModel {
         return $document;
     }
 
+    // Encuentra un documento por otro criterio y lo devuelve como un objeto
+    public static function findOne(array $criteria =[]) {
+        $collection = static::getCollection();
+        $document = $collection->findOne($criteria);
+        return $document;
+    }
+
     // Encuentra documentos basados en un criterio y los devuelve como objetos
     public static function findMany(array $criteria = []) {
         $collection = static::getCollection();
